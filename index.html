@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head><link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://aja.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  
+<body>
+  
+<!-- INTRO VIDEO -->
+<video
+  id="introVideo"
+  preload="auto"
+  playsinline
+  muted
+  style="
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+    display: none;
+    z-index: 20;
+  "
+>
+  <source src="./Introduction/INTRODUCTION.mp4" type="video/mp4">
+</video>
+
+ <audio id="clickSound" src="bg_music.mp3"></audio>
+
+<img
+  id="startIntroImage"
+  src="./Between_worlds/1.png"
+  alt="Click to Start"
+  style="
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 9999;
+    cursor: pointer;
+    display: none;
+  "
+/>
+
+
+<div id="slideControls" style="display:none;">
+  <button type="button"  class="btn btn-secondary" id ="prevBtn">◀ Back</button>
+  <button type="button" id="nextBtn" class="btn btn-secondary">Next ▶</button>
+</div>
+
+<!--map for world 1-->
+<div id="mapContainer" style="
+    position: fixed;
+    inset: 0;
+    background-image: url('./W1_Images/19.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+">
+
+  <!-- invisible hotspots -->
+  <button class="station" data-game="pt1" style="
+      position: absolute;
+      top: 11.85%; left: 13.02%;
+      width: 30.21%; height: 28.33%;
+      opacity: 0;
+      cursor: pointer;
+      border: black;
+      background: white;
+      z-index: 100;
+  "></button>
+
+  <button class="station" data-game="pt2" style="
+      position: absolute;
+      top: 12.13%; left: 46.41%;
+      width: 30.42%; height: 28.43%;
+      opacity: 0;
+      cursor: pointer;
+      border: black;
+      background: white;
+      z-index: 100;
+  "></button>
+
+  <button class="station" data-game="pt3" style="
+      position: absolute;
+      bottom: 14.72%; left: 26.21%;
+      width: 30.16%; height: 28.24%;
+      opacity: 0;
+      cursor: pointer;
+      border: black;
+      background: white;
+      z-index: 100;
+  "></button>
+
+  <button class="station" data-game="pt4" style="
+      position: absolute;
+      bottom: 14.72%; right: 12.15%;
+      width: 30.16%; height: 28.33%;
+      opacity: 0;
+      cursor: pointer;
+      border: black;
+      background: white;
+      z-index: 100;
+  "></button>
+
+</div>
+
+
+<!--answer box for world 2-->
+  <div id="answerContainer" style="display:flex; align-items:center; gap:10px;">
+  <input type="text" id="answerBox" class="form-control" placeholder="Type answer..." />
+  <button type="button" class="btn btn-dark" id="submitAnswer">Submit</button>
+</div>
+
+
+  <button id="skipBtn" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: #ffcc00;
+  cursor: pointer;
+  display: none;
+">
+  Skip ▶
+</button>
+
+<div id="yesNoContainer" style="display:none; position:absolute; inset:0; z-index:200;">
+  <button id="btnYes" style="position:absolute; top:58%; left:15%; width:28%; height:20.5%; opacity:0"></button>
+  <button id="btnNo" style="position:absolute; top:58%; left:60%; width:28%; height:20.5%; opacity:0;"></button>
+</div>
+
+  <script src="scrippy.js"></script>
+</body>
+</html>
