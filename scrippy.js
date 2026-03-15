@@ -207,12 +207,13 @@ function showSlideControls(show = true, allowSkip = true) {
 
 // displays skip in necessary parts
 function showSkip(onSkip) {
-  skipBtn.style.display = "block";
-  skipBtn.onclick = () => {
+  const skip = document.getElementById("skipBtn");
+  skip.style.display = "block";
+  skip.onclick = () => {
     hideSkip();
     onSkip && onSkip();
   };
-}
+  }
 
 // hides skip in other parts
 function hideSkip() {
