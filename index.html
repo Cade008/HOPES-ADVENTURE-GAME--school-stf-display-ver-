@@ -68,9 +68,6 @@
 <div id="slideControls" style="display:none;">
   <button type="button"  class="btn btn-secondary" id ="prevBtn">← Back</button>
   <button type="button" id="nextBtn" class="btn btn-secondary">Next →</button>
-</div>
-
-<div id="slideContainer" style="display:none; align-items:right">
   <button type="button" id="skipBtn" class="btn btn-warning">Skip ↠</button>
 </div>
 
@@ -138,12 +135,13 @@
   <button type="button" class="btn btn-dark" id="submitAnswer">Submit</button>
 </div>
 
-
-
-
 <div id="yesNoContainer" style="display:none; position:absolute; inset:0; z-index:200;">
   <button id="btnYes" style="position:absolute; top:58%; left:15%; width:28%; height:20.5%; opacity:0"></button>
   <button id="btnNo" style="position:absolute; top:58%; left:60%; width:28%; height:20.5%; opacity:0;"></button>
+</div>
+
+<div id="resetGame" class="position-fixed top-0 end-0 m-3">
+  <button type="button" id="resetBtn" class="btn btn-danger">Reset Game</button>
 </div>
 
   <script src="scrippy.js"></script>

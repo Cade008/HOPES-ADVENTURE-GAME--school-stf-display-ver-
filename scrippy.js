@@ -30,6 +30,7 @@ function clearCheckpoint() {
 
 //---------- Checkpoints ----------//
 
+
 //---------- Common functions/variables ----------//
 console.log("GAME1 JS LOADED — VERSION 1000");
 
@@ -1005,7 +1006,9 @@ window.addEventListener("DOMContentLoaded", () => {
   showIntroStartImage();
   if (!INTRO_PLAYING) {
     playSound();
-  }
+  };
+
+  
 });
 
 
@@ -1028,6 +1031,13 @@ function runSequence(i = 0) {
 }
 
 console.log(document.getElementById("introVideo"));
+
+const resetBtn = document.getElementById("resetBtn");
+
+  resetBtn.onclick = () => {
+    clearCheckpoint(); // make sure this exists
+    location.reload();
+  };
 
 document.querySelectorAll(".station").forEach(btn => {
   btn.onclick = () => alert("STATION CLICKED");
